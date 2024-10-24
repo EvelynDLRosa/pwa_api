@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA con Flask</title>
+    <link rel="manifest" href="/manifest.json">
+    <script defer src="/static/js/main.js"></script>
+</head>
+<body>
+    <h1>PWA con Flask</h1>
+    <div id="app">
+        <p>Datos de personas:</p>
+        <ul id="personas-list"></ul>
+    </div>
+    
+    <button id="sync-data">Sincronizar Datos</button>
+
+    <!-- Formulario para crear nueva persona -->
+    <h3>Agregar Nueva Persona</h3>
+    <form id="persona-form">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="number" id="edad" placeholder="Edad" required>
+        <input type="text" id="telefono" placeholder="Teléfono" required>
+        <button type="submit">Agregar Persona</button>
+    </form>
+
+    <!-- Registrar el service worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(reg => console.log('Service worker registrado', reg))
+                .catch(err => console.error('Error al registrar service worker', err));
+        }
+    </script>
+</body>
+</html>

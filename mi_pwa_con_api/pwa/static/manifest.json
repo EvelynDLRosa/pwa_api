@@ -1,0 +1,21 @@
+{
+    "name": "PWA con Flask",
+    "short_name": "PWAFlask",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "description": "Una PWA simple con Flask y FastAPI",
+    "icons": [
+      {
+        "src": "/static/img/icon-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/static/img/icon-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }
+  
